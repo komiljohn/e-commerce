@@ -18,6 +18,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/utils/__test__/pxToRem.spec.js",
+    "src/utils/__test__/pxToRem.spec.js"
+  ],
   "exclude": ["node_modules"]
 }
