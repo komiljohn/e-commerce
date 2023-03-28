@@ -64,7 +64,7 @@ const Main: FC = () => {
         Create post
       </Button>
       <div>
-        {posts?.data?.map((item) => (
+        {posts?.data?.data.map((item: { id: string, title: string }) => (
           <div key={item.id}>{item.title}</div>
         ))}
       </div>

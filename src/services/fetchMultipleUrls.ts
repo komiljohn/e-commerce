@@ -1,6 +1,6 @@
 import { request } from './http-client'
 
-export const fetchMultipleUrls = async (urls: String[]) => {
+export const fetchMultipleUrls = async (urls: string[]) => {
   let data
   try {
     data = await Promise.all(
