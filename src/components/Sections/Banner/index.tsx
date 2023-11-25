@@ -1,14 +1,15 @@
 import { FC } from "react";
 import Slider, { CustomArrowProps } from "react-slick";
 import Image from "next/image";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-import BannerImage from "../../../../public/images/banner.png";
+import BannerImage from "./assets/banner.png";
+import BannerImage2 from "./assets/banner-2.png";
 import Container from "@/components/Layout/Container";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import cls from "./style.module.scss";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 function SampleNextArrow(props: CustomArrowProps) {
 	const { onClick } = props;
@@ -65,14 +66,14 @@ const Banner: FC = () => {
 	};
 
 	return (
-		<section>
+		<section id={cls.banner}>
 			<Container>
 				<Slider {...settings}>
 					<div>
 						<Image style={{ width: "100%", height: "auto" }} src={BannerImage} alt='banner' />
 					</div>
 					<div>
-						<Image style={{ width: "100%", height: "auto" }} src={BannerImage} alt='banner' />
+						<Image style={{ width: "100%", height: "auto" }} src={BannerImage2} alt='banner' />
 					</div>
 					<div>
 						<Image style={{ width: "100%", height: "auto" }} src={BannerImage} alt='banner' />

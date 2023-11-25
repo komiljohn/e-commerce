@@ -1,9 +1,8 @@
 import { FC } from "react";
 import Link from "next/link";
-import styles from "./style.module.scss";
+import cls from "./style.module.scss";
 import Navigation from "./components/Navigation";
 import { Box } from "@mui/material";
-import cls from "./style.module.scss";
 import DeliveryLocation from "./components/DeliveryLocation";
 import OrdersBasket from "./components/OrdersBasket";
 import LanguageMenu from "./components/LanguageMenu";
@@ -15,7 +14,7 @@ import Image from "next/image";
 
 const Header: FC = () => {
 	return (
-		<header className={styles.header}>
+		<header id={cls.header}>
 			<Container>
 				<nav className={cls.navbar}>
 					<Box display='flex'>

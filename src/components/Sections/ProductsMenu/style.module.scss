@@ -1,9 +1,9 @@
-.categories {
-	@include align-items-center;
-	gap: 8px;
+#categories_menu {
 	margin-top: 32px;
 	div {
+		gap: 8px;
 		padding: 12px 16px;
+		@include align-items-center;
 		border-radius: 16px;
 		cursor: pointer;
 		transition: all 0.2s ease;
@@ -41,4 +41,10 @@
 			}
 		}
 	}
+}
+.modal {
+	border-radius: 16px 0px 0px 16px;
+	background-color: #fff;
+	width: 80%;
+	@include center-absolute-element;
 }

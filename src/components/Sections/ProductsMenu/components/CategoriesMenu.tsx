@@ -9,23 +9,23 @@ const CategoriesMenu: FC = () => {
 	const [activeCategoryId, setActiveCategoryId] = useState("1");
 
 	return (
-		<section>
+		<section id={cls.categories_menu}>
 			<Container>
-				<Box className={cls.categories}>
+				<>
 					{categories.map((c) => (
 						<Box
 							key={c.id}
 							sx={{
-								bgcolor: c.id === activeCategoryId ? blue[50] : "#fff",
-								color: c.id === activeCategoryId ? blue[600] : "#000",
-								fontWeight: c.id === activeCategoryId ? 500 : 400,
+								bgcolor: c.id === activeCategoryId ? blue[50] : "white",
+								color: c.id === activeCategoryId ? blue[600] : "black",
+								// fontWeight: c.id === activeCategoryId ? 500 : 400,
 							}}
 							onClick={() => setActiveCategoryId(c.id)}
 						>
 							{c.title}
 						</Box>
 					))}
-				</Box>
+				</>
 			</Container>
 		</section>
 	);

@@ -12,6 +12,8 @@ interface IProps {
 }
 
 const Product = ({ img, description, title, price }: IProps) => {
+	// const [isVisible, handleOpen, handleClose] = useBooleanState();
+
 	return (
 		<Grid item xs={3}>
 			<article className={cls.product}>
@@ -27,6 +29,24 @@ const Product = ({ img, description, title, price }: IProps) => {
 					</div>
 				</div>
 			</article>
+			{/* {isVisible && (
+				<Modal
+					open={isVisible}
+					onClose={handleClose}
+					aria-labelledby='modal-modal-title'
+					aria-describedby='modal-modal-description'
+				>
+					<section className={cls.modal}>
+						<div>
+							<Image src={img} alt={description} />
+						</div>
+						<div>
+							<h2>{title}</h2>
+							<p>{description}</p>
+						</div>
+					</section>
+				</Modal>
+			)} */}
 		</Grid>
 	);
 };
