@@ -1,10 +1,10 @@
-import { Container } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import Link from "next/link";
 import { FC } from "react";
 import cls from "./style.module.scss";
 import Navbar from "./components/Navbar";
 import Socials from "./components/Socials";
+import Container from "@/components/Layout/Container";
 
 const Main: FC = () => {
 	return (

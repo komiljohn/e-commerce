@@ -2,13 +2,14 @@ import { FC } from "react";
 import Link from "next/link";
 import styles from "./style.module.scss";
 import Navigation from "./components/Navigation";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import cls from "./style.module.scss";
 import DeliveryLocation from "./components/DeliveryLocation";
 import OrdersBasket from "./components/OrdersBasket";
 import LanguageMenu from "./components/LanguageMenu";
 import ProfileButton from "./components/ProfileButton";
 import { blue } from "@mui/material/colors";
+import Container from "@/components/Layout/Container";
 
 const Header: FC = () => {
 	return (
