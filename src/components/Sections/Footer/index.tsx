@@ -5,6 +5,8 @@ import cls from "./style.module.scss";
 import Navbar from "./components/Navbar";
 import Socials from "./components/Socials";
 import Container from "@/components/Layout/Container";
+import LogoImage from "../../../../public/images/logo.png";
+import Image from "next/image";
 
 const Main: FC = () => {
 	return (
@@ -13,7 +15,7 @@ const Main: FC = () => {
 				<>
 					<nav className={cls.navbar}>
 						<Link color={blue[600]} className={cls.logo} href='/'>
-							LOGO
+							<Image src={LogoImage} alt='logo' />
 						</Link>
 						<Navbar />
 					</nav>

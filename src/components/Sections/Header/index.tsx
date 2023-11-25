@@ -10,6 +10,8 @@ import LanguageMenu from "./components/LanguageMenu";
 import ProfileButton from "./components/ProfileButton";
 import { blue } from "@mui/material/colors";
 import Container from "@/components/Layout/Container";
+import LogoImage from "../../../../public/images/logo.png";
+import Image from "next/image";
 
 const Header: FC = () => {
 	return (
@@ -18,7 +20,7 @@ const Header: FC = () => {
 				<nav className={cls.navbar}>
 					<Box display='flex'>
 						<Link color={blue[600]} className={cls.logo} href='/'>
-							LOGO
+							<Image src={LogoImage} alt='logo' />
 						</Link>
 						<Navigation />
 					</Box>

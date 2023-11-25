@@ -23,7 +23,7 @@ const Product = ({ img, description, title, price }: IProps) => {
 						<p className={cls.price}>
 							{formatNumbers(price)} <span>sum</span>
 						</p>
-						<PrimaryButton>Add</PrimaryButton>
+						<PrimaryButton>Add to cart</PrimaryButton>
 					</div>
 				</div>
 			</article>

@@ -24,6 +24,7 @@ export default createTheme({
 		MuiButton: {
 			styleOverrides: {
 				root: {
+					textTransform: "none",
 					backgroundColor: "red",
 					fontFamily: "Inter",
 					"&:hover": {
