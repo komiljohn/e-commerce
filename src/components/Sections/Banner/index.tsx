@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import Slider from "react-slick";
+import { FC } from "react";
+import Slider, { CustomArrowProps } from "react-slick";
 import Image from "next/image";
 
 import BannerImage from "../../../../public/images/banner.png";
@@ -10,35 +10,31 @@ import cls from "./style.module.scss";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-type ArrowProps = {
-	onClick: () => void;
-	updateFn: () => void;
-};
-
-function SampleNextArrow(props: ArrowProps) {
-	const { onClick, updateFn } = props;
+function SampleNextArrow(props: CustomArrowProps) {
+	const { onClick } = props;
 	return (
 		<div
 			className={`${cls.arrows} ${cls.left}`}
-			onClick={() => {
-				updateFn();
-				onClick();
+			onClick={(e) => {
+				if (onClick) {
+					onClick(e);
+				}
 			}}
 		>
 			<KeyboardArrowLeftIcon fontSize='large' />
 		</div>
 	);
 }
-
-function SamplePrevArrow(props: ArrowProps) {
-	const { onClick, updateFn } = props;
+function SamplePrevArrow(props: CustomArrowProps) {
+	const { onClick } = props;
 
 	return (
 		<div
 			className={`${cls.arrows} ${cls.right}`}
-			onClick={() => {
-				onClick();
-				updateFn();
+			onClick={(e) => {
+				if (onClick) {
+					onClick(e);
+				}
 			}}
 		>
 			<KeyboardArrowRightIcon fontSize='large' />
@@ -47,15 +43,15 @@ function SamplePrevArrow(props: ArrowProps) {
 }
 
 const Banner: FC = () => {
-	const [activeSlide, setActiveSlide] = useState(0);
+	// const [activeSlide, setActiveSlide] = useState(0);
 
-	const toNextSlide = () => {
-		setActiveSlide((p) => p + 1);
-	};
+	// const toNextSlide = () => {
+	// 	setActiveSlide((p) => p + 1);
+	// };
 
-	const toPreviousSlide = () => {
-		setActiveSlide((p) => p - 1);
-	};
+	// const toPreviousSlide = () => {
+	// 	setActiveSlide((p) => p - 1);
+	// };
 
 	const settings = {
 		dots: true,
@@ -64,11 +60,9 @@ const Banner: FC = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		dotsClass: cls.slick_dots,
-		nextArrow: <SampleNextArrow updateFn={toNextSlide} />,
-		prevArrow: <SamplePrevArrow updateFn={toPreviousSlide} />,
+		nextArrow: <SampleNextArrow />,
+		prevArrow: <SamplePrevArrow />,
 	};
-
-	console.log("activeSlide", activeSlide);
 
 	return (
 		<section>
