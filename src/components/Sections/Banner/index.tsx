@@ -1,0 +1,92 @@
+import { FC, useState } from "react";
+import Slider from "react-slick";
+import Image from "next/image";
+
+import BannerImage from "../../../../public/images/banner.png";
+import Container from "@/components/Layout/Container";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import cls from "./style.module.scss";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+
+type ArrowProps = {
+	onClick: () => void;
+	updateFn: () => void;
+};
+
+function SampleNextArrow(props: ArrowProps) {
+	const { onClick, updateFn } = props;
+	return (
+		<div
+			className={`${cls.arrows} ${cls.left}`}
+			onClick={() => {
+				updateFn();
+				onClick();
+			}}
+		>
+			<KeyboardArrowLeftIcon fontSize='large' />
+		</div>
+	);
+}
+
+function SamplePrevArrow(props: ArrowProps) {
+	const { onClick, updateFn } = props;
+
+	return (
+		<div
+			className={`${cls.arrows} ${cls.right}`}
+			onClick={() => {
+				onClick();
+				updateFn();
+			}}
+		>
+			<KeyboardArrowRightIcon fontSize='large' />
+		</div>
+	);
+}
+
+const Banner: FC = () => {
+	const [activeSlide, setActiveSlide] = useState(0);
+
+	const toNextSlide = () => {
+		setActiveSlide((p) => p + 1);
+	};
+
+	const toPreviousSlide = () => {
+		setActiveSlide((p) => p - 1);
+	};
+
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dotsClass: cls.slick_dots,
+		nextArrow: <SampleNextArrow updateFn={toNextSlide} />,
+		prevArrow: <SamplePrevArrow updateFn={toPreviousSlide} />,
+	};
+
+	console.log("activeSlide", activeSlide);
+
+	return (
+		<section>
+			<Container>
+				<Slider {...settings}>
+					<div>
+						<Image style={{ width: "100%", height: "auto" }} src={BannerImage} alt='banner' />
+					</div>
+					<div>
+						<Image style={{ width: "100%", height: "auto" }} src={BannerImage} alt='banner' />
+					</div>
+					<div>
+						<Image style={{ width: "100%", height: "auto" }} src={BannerImage} alt='banner' />
+					</div>
+				</Slider>
+			</Container>
+		</section>
+	);
+};
+
+export default Banner;

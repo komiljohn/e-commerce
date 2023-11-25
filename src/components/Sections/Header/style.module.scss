@@ -1,0 +1,51 @@
+.header {
+	padding: 14px 0;
+	margin-bottom: 12px;
+	.navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.logo {
+			font-family: "Montserrat";
+			@include font-styles($size: 24px, $height: 20px, $weight: 900);
+			letter-spacing: -3px;
+			margin-right: 40px;
+			color: var(--primary-color);
+		}
+	}
+}
+.navbar_menu {
+	align-items: center;
+	display: flex;
+	gap: 32px;
+	li a {
+		@include font-styles;
+	}
+}
+//
+.delivery_location {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-right: 32px;
+	p:first-child {
+		@include font-styles($size: 14px, $height: 14px);
+		margin-bottom: 4px;
+	}
+	p:last-child {
+		@include font-styles($size: 13px, $height: 13px);
+		color: var(--primary-color);
+	}
+}
+
+.orders_basket {
+	margin-right: 12px;
+}
+
+.language_menu {
+	margin-right: 16px;
+}
+.language_item {
+	display: flex;
+	gap: 8px;
+}

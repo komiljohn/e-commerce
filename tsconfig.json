@@ -23,7 +23,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"src/utils/__test__/pxToRem.spec.js",
-		"src/utils/__test__/pxToRem.spec.js"
+		"src/utils/__test__/pxToRem.spec.js",
+		"src/components/Sections/Footer/assets/icons.js"
 	],
 	"exclude": ["node_modules"]
 }

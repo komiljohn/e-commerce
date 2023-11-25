@@ -1,0 +1,31 @@
+#footer {
+	border-top: 1px solid #eef0f2;
+	.navbar {
+		@include element-between;
+		padding: 38px 0;
+		border-bottom: 1px solid #eef0f2;
+		.logo {
+			@include font-styles($size: 24px, $height: 20px, $weight: 900);
+			font-family: "Montserrat";
+			letter-spacing: -3px;
+			margin-right: 40px;
+			color: var(--primary-color);
+		}
+		.navbar_list {
+			@include align-items-center;
+			gap: 40px;
+		}
+	}
+	.rights {
+		@include element-between;
+		padding: 24px 0;
+		color: #808080;
+		p {
+			@include font-styles($size: 16px, $height: 20px);
+		}
+		.socials {
+			@include align-items-center;
+			gap: 16px;
+		}
+	}
+}
